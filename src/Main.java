@@ -1,5 +1,19 @@
+import java.util.Scanner;
+import ru.netology.service.CustomsService;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Test");
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Здравствуйте, уважаемый пользователь!");
+
+        System.out.print("Введите цену товара (в руб.): ");
+        int price = scanner.nextInt();
+
+        System.out.print("Введите вес товара (в кг.): ");
+        int weight = scanner.nextInt();
+
+        int result = CustomsService.calculateCustoms(price, weight);
+        System.out.println("Размер пошлины (в руб.) составит: " + result);
     }
 }
